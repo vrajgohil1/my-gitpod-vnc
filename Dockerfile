@@ -7,7 +7,9 @@ USER root
 RUN apt-get update                                             \
     && apt-get install -y libgtk-3-dev chromium-browser                 \
     && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
-    && apt install xfce4 xfce4-goodies
+    && apt-get install xfce4 xfce4-goodies
+    && apt-get install xfce4-goodies
+    && apt-get install wget
     && wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
     && wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
     && echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
